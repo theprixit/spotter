@@ -17,7 +17,7 @@ button.sec{background:#e6edf5;color:#0b5fa5}label{display:flex;gap:8px;align-ite
 <button id="go">Unlock</button><button class="sec" id="forget" hidden>Forget this phone</button>
 <div id="st"></div>
 <div id="inst" hidden style="margin-top:14px;padding:10px;border-radius:8px;background:#eef4fb;font-size:13px;color:#1a1f24"></div>
-<small id="ver">0.1.0-beta (build 20260904-2046) · © 2026 Parikshit Pal · <a href="LICENSE" style="color:inherit">MIT</a></small></div>
+<small id="ver">0.1.0-beta (build 20260904-2048) · © 2026 Parikshit Pal · <a href="LICENSE" style="color:inherit">MIT</a></small></div>
 <script>
 const st = document.getElementById('st'); const say = (m, c) => { st.className = c || ''; st.textContent = m; };
 const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
@@ -27,8 +27,9 @@ const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
 window.__spotterUpdateReady = false;
 function updateToast() { if (document.getElementById('update-toast')) return; window.__spotterUpdateReady = true; const t = document.createElement('div'); t.id = 'update-toast'; t.style.cssText = 'position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:10000;display:flex;gap:8px;align-items:center;background:#1a1f24;color:#fff;padding:10px 12px;border-radius:10px;font-size:14px;box-shadow:0 4px 16px rgba(0,0,0,.3);max-width:94vw;white-space:nowrap';
   t.innerHTML = '<span>A new version is ready.</span><button type="button" style="height:34px;padding:0 12px;background:#0a7a3d;font-size:14px" onclick="location.reload()">Refresh now</button><button type="button" style="height:34px;padding:0 8px;background:transparent;opacity:.7;font-weight:400" onclick="this.parentElement.remove()" title="Later">&times;</button>'; document.body.appendChild(t); }
+const hadController = !!(navigator.serviceWorker && navigator.serviceWorker.controller);
 if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js').then(reg => { reg.update().catch(() => {}); document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') reg.update().catch(() => {}); });
-  reg.addEventListener('updatefound', () => { const nw = reg.installing; if (!nw) return; nw.addEventListener('statechange', () => { if (nw.state === 'activated' && navigator.serviceWorker.controller) updateToast(); }); }); }).catch(() => {}); }
+  reg.addEventListener('updatefound', () => { const nw = reg.installing; if (!nw) return; nw.addEventListener('statechange', () => { if (nw.state === 'activated' && hadController) updateToast(); }); }); }).catch(() => {}); }
 // IndexedDB for the remembered (non-extractable) key
 function idb() { return new Promise((res, rej) => { const r = indexedDB.open('spotter-gate', 1); r.onupgradeneeded = () => r.result.createObjectStore('k'); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); }); }
 async function kget() { try { const d = await idb(); return await new Promise((res, rej) => { const t = d.transaction('k').objectStore('k').get('aes'); t.onsuccess = () => res(t.result || null); t.onerror = () => rej(t.error); }); } catch (e) { return null; } }
