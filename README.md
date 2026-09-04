@@ -1,6 +1,6 @@
-# Tower Spotter
+# Spotter
 
-**Current version: v0.1.0-beta** · [Changelog](CHANGELOG.md) · [Live app](https://theprixit.github.io/tower-spotter/) · limited beta, by invitation
+**Current version: v0.1.0-beta** · [Changelog](CHANGELOG.md) · [Live app](https://theprixit.github.io/spotter/) · limited beta, by invitation
 
 A phone web app that gives the coordinates of a spot you are looking at, from a laser rangefinder and the phone's own GPS and compass. Built for choosing and recording tower positions from the road in mountain terrain, where you can see the spot but cannot walk to it.
 
