@@ -11,13 +11,13 @@ button{width:100%;margin-top:10px;padding:12px;border:0;border-radius:8px;backgr
 button.sec{background:#e6edf5;color:#0b5fa5}label{display:flex;gap:8px;align-items:center;font-size:13px;color:#5b6672;margin-top:10px}
 #st{font-size:13px;margin-top:10px;min-height:18px}.err{color:#b54708}.ok{color:#0a7a3d}small{color:#8a94a0;font-size:11px}
 </style></head><body>
-<div class="box"><h1>Spotter <small style="font-weight:400;color:#8a94a0">v0.1.0-beta</small></h1><p>Limited beta, by invitation. The app is encrypted on the server; it opens with the passkey and then runs on this phone, offline as well. <a href="README.md" style="color:#0b5fa5">What it does</a> · <a href="CHANGELOG.md" style="color:#0b5fa5">changes</a></p>
+<div class="box"><h1>Spotter <small style="font-weight:400;color:#8a94a0">v0.1.1-beta</small></h1><p>Limited beta, by invitation. The app is encrypted on the server; it opens with the passkey and then runs on this phone, offline as well. <a href="README.md" style="color:#0b5fa5">What it does</a> · <a href="CHANGELOG.md" style="color:#0b5fa5">changes</a></p>
 <input id="pw" type="password" placeholder="passkey" autocomplete="current-password" autocapitalize="off">
 <label><input id="rem" type="checkbox" checked> remember on this phone (no passkey next time)</label>
 <button id="go">Unlock</button><button class="sec" id="forget" hidden>Forget this phone</button>
 <div id="st"></div>
 <div id="inst" hidden style="margin-top:14px;padding:10px;border-radius:8px;background:#eef4fb;font-size:13px;color:#1a1f24"></div>
-<small id="ver">0.1.0-beta (build 20260904-2051) · © 2026 Parikshit Pal · <a href="LICENSE" style="color:inherit">MIT</a></small></div>
+<small id="ver">0.1.1-beta (build 20260905-1037) · © 2026 Parikshit Pal · <a href="LICENSE" style="color:inherit">MIT</a></small></div>
 <script>
 const st = document.getElementById('st'); const say = (m, c) => { st.className = c || ''; st.textContent = m; };
 const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));

@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.1.1-beta — 2026-09-05
+
+Compass capture fixes (beta feedback: heading jumping by 180°):
+
+- The compass reference turns over when the phone is tilted past vertical. Sampling now pauses with a "hold the phone flatter" note whenever the phone is more than 45° from level, and the level angle is shown with the reading.
+- A sudden change of more than 60° restarts the average instead of swinging through it.
+- The dial always turns the short way, including across north; before, crossing north spun it the long way round.
+- Capture needs a settled reading (a few samples while level).
+
 ## v0.1.0-beta — 2026-09-04
 
 First limited beta. Published as "Spotter" at theprixit.github.io/spotter (the working name Tower Spotter was dropped: the app is general).
