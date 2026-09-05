@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.1.2-beta — 2026-09-05
+
+Steadier compass capture (beta feedback: reading still jumpy):
+
+- The heading is now averaged over the last two seconds and the display refreshes five times a second, instead of a third of a second at sensor rate.
+- A steadiness state: settling, wobbling, steady (±2.5° or better over two seconds). The Capture button shows the value it will take once steady.
+- Calibration prompt when the sensor reports poor accuracy or the reading will not settle: figure-of-eight motion, and keep the phone away from the rangefinder's magnet, the car and belt buckles.
+- The reading card records the captured heading with its spread, and a second capture replaces it.
+
 ## v0.1.1-beta — 2026-09-05
 
 Compass capture fixes (beta feedback: heading jumping by 180°):
