@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.3-beta — 2026-09-05
+
+GPS position averaged (beta test: a fix reported as ±11 m was 24 m off beside a building):
+
+- "Get my GPS position" now collects fixes for up to 20 s and takes their accuracy-weighted mean, stopping early when the fix is steady at ±4 m or better. The line under the button shows how many fixes, over how long, and their spread. Tap the button again to stop early.
+- The ± figure of a result now includes the GPS accuracy of the readings, and the compass is taken as ±8° rather than ±6°. A second reading removes the compass part but not a position error, and the app says so.
+
 ## v0.1.2-beta — 2026-09-05
 
 Steadier compass capture (beta feedback: reading still jumpy):
