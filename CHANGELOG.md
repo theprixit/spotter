@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.4-beta — 2026-09-07
+
+- Each saved spot has its own "kml" button: exports that spot alone (KMZ when it has photos) with the same observer points, lines of sight and arcs as the project export.
+- "Open in maps" opened a map without a pin on iPhone (the geo: scheme is Android-only). Replaced by a Google Maps link that drops the pin on every phone, plus an Apple Maps link on iPhone.
+
 ## v0.1.3-beta — 2026-09-05
 
 GPS position averaged (beta test: a fix reported as ±11 m was 24 m off beside a building):
